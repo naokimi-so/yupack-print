@@ -1,0 +1,16 @@
+/*
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "lib/reset";
+
+.top-header {
+  height: 80px;
+  line-height: 80px;
+  background-color: rgb(3, 179, 188);
+  a {
+    margin: 0 80px;
+    color: #fff;
+  }
+}
