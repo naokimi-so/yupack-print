@@ -4,11 +4,13 @@ class PrintsController < ApplicationController
   end
 
   def label
-    # print_params
+    @user = current_user 
   end
 
   private
-    # def print_params
-    #   params.require(:destination).permit(:name, :address, :postal_code, :tel)
-    # end
+
+    def print_params
+      params.require(:destination).permit(:name, :address, :postal_code, :tel)
+    end
+
 end

@@ -1,147 +1,17 @@
-h2.page-title 送り先情報入力ページ
+.ui.container.main
+  h2.page-title 送り先情報入力ページ
 
-form
-  .form-group
-    label for="name" 名前
-    input#name.form-control placeholder="山田 太郎"
-  .form-group
-    label for="address" 住所
-    input#address.form-control placeholder="福岡県福岡市中央区大名1-5-3 エスパース大名ビル５F"
-  .form-group
-    label 郵便番号
-    inpur#postal-code.form-control placeholder="8100041"
-  .form-group
-    label 電話番号
-    input#tel.form-control placeholder="092-717-8850"
-  button.btn.btn-primary 印刷ページへ
-
-= link_to "印刷ページへ", prints_label_path
-
-div class="bill-container#letter-pack"
-  header.bill-header
-    label.bill-label.btn
-      span
-        | 印刷する
-      input onclick="window.print();" type="button"
-  .lp-wrap
-    .lp-main
-      section.lp-sec.lp-to
-        .lp-row.lp-adress
-          .lp-title
-            div
-              .lp-title-jp
-                | おところ
-              .lp-title-us
-                | Address
-            .lp-postal-code
-              .postal-wrap
-                .postal-frame
-
-                .postal-frame
-
-                .postal-frame
-
-              .lp-bar
-                | -
-              .postal-wrap
-                .postal-frame
-
-                .postal-frame
-
-                .postal-frame
-
-                .postal-frame
-
-          .lp-text.lp-text-address
-        .lp-row
-          .lp-text.lp-text-address
-            | 東京都港区南麻布4-5-48　4階　株式会社HAPPY ARCH
-        .lp-row
-          .lp-title
-            div
-              .lp-title-jp
-                | おなまえ
-              .lp-title-us
-                | Name
-          .lp-mr
-            | 様
-          .lp-text.lp-text-name
-            | 小島 あり彩
-        .lp-phone
-          .lp-title
-            div
-              .lp-title-jp
-                | 電話番号
-              .lp-title-us
-                | Telephone Number
-          .lp-text.lp-text-num
-      section.lp-sec.lp-from
-        .lp-row.lp-adress
-          .lp-title
-            div
-              .lp-title-jp
-                | おところ
-              .lp-title-us
-                | Address
-            .lp-postal-code
-              .postal-wrap
-                .postal-frame
-                  = current_user.postal_code.slice(0)
-                .postal-frame
-                  = current_user.postal_code.slice(1)
-                .postal-frame
-                  = current_user.postal_code.slice(2)
-              .lp-bar
-                | -
-              .postal-wrap
-                .postal-frame
-                  = current_user.postal_code.slice(3)
-                .postal-frame
-                  = current_user.postal_code.slice(4)
-                .postal-frame
-                  = current_user.postal_code.slice(5)
-                .postal-frame
-                  = current_user.postal_code.slice(6)
-        .lp-row
-          .lp-text.lp-text-address
-            = current_user.address
-        .lp-row
-          .lp-title
-            div
-              .lp-title-jp
-                | おなまえ
-              .lp-title-us
-                | Name
-          .lp-mr
-            | 様
-          .lp-text.lp-text-name
-            = current_user.name
-        .lp-phone
-          .lp-title
-            div
-              .lp-title-jp
-                | 電話番号
-              .lp-title-us
-                | Telephone Number
-          .lp-text.lp-text-num
-            = current_user.tel
-.ui.inverted.vertical.footer.segment
-  .ui.container
-    .ui.stackable.inverted.divided.equal.height.stackable.grid
-      .three.wide.column
-        h4.ui.inverted.header About
-        .ui.inverted.link.list
-          a.item href="#"  Sitemap
-          a.item href="#"  Contact Us
-          a.item href="#"  Religious Ceremonies
-          a.item href="#"  Gazebo Plans
-      .three.wide.column
-        h4.ui.inverted.header Services
-        .ui.inverted.link.list
-          a.item href="#"  Banana Pre-Order
-          a.item href="#"  DNA FAQ
-          a.item href="#"  How To Access
-          a.item href="#"  Favorite X-Men
-      .seven.wide.column
-        h4.ui.inverted.header Footer Header
-        p Extra space for a call to action inside the footer that could help re-engage users.
+  form.ui.form
+    .field
+      label for="name" 名前
+      input#name placeholder="山田 太郎"
+    .field
+      label for="address" 住所
+      input#address placeholder="福岡県福岡市中央区大名1-5-3 エスパース大名ビル５F"
+    .field
+      label 郵便番号
+      input#postal-code placeholder="8100041"
+    .field
+      label 電話番号
+      input#tel placeholder="092-717-8850"
+    = link_to "印刷ページへ", prints_label_path, class: "ui button"

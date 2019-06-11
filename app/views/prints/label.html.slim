@@ -1,9 +1,6 @@
-div class="bill-container#letter-pack"
-  header.bill-header
-    label.bill-label.btn
-      span
-        | 印刷する
-      input onclick="window.print();" type="button"
+h2.page-title 送り先情報入力ページ
+
+div.bill-container#letter-pack
   .lp-wrap
     .lp-main
       section.lp-sec.lp-to
@@ -17,22 +14,22 @@ div class="bill-container#letter-pack"
             .lp-postal-code
               .postal-wrap
                 .postal-frame
-
+                  = @user.postal_code[0]
                 .postal-frame
-
+                  = @user.postal_code[1]
                 .postal-frame
-
+                  = @user.postal_code[2]
               .lp-bar
                 | -
               .postal-wrap
                 .postal-frame
-
+                  = @user.postal_code[3]
                 .postal-frame
-
+                  = @user.postal_code[4]
                 .postal-frame
-
+                  = @user.postal_code[5]
                 .postal-frame
-
+                  = @user.postal_code[6]
           .lp-text.lp-text-address
         .lp-row
           .lp-text.lp-text-address
@@ -106,3 +103,10 @@ div class="bill-container#letter-pack"
                 | Telephone Number
           .lp-text.lp-text-num
             = current_user.tel
+
+
+header.bill-header
+  label.bill-label.btn
+    span
+      | 印刷する
+    input onclick="window.print();" type="button"

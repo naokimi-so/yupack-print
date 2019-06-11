@@ -14,7 +14,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require semantic-ui
+// require semantic-ui
 //= require_tree .
 
 $(function(){
