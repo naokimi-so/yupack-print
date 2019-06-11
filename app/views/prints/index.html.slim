@@ -9,9 +9,12 @@
       label for="address" 住所
       input#address placeholder="福岡県福岡市中央区大名1-5-3 エスパース大名ビル５F"
     .field
-      label 郵便番号
+      label for="postal-code" 郵便番号
       input#postal-code placeholder="8100041"
     .field
-      label 電話番号
+      label for="tel" 電話番号
       input#tel placeholder="092-717-8850"
-    = link_to "印刷ページへ", prints_label_path, class: "ui button"
+    #send
+      | dbasjcbak
+    #result
+    = link_to "印刷ページへ", prints_label_path, class: "ui button", id: "send"

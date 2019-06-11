@@ -9,6 +9,7 @@ html
     = stylesheet_link_tag "#{controller_name}", media: "print"
     = stylesheet_link_tag "#{controller_name}"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "#{controller_name}"
   body
     / p.notice = notice
     / p.alert = alert

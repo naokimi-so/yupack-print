@@ -13,27 +13,20 @@ div.bill-container#letter-pack
                 | Address
             .lp-postal-code
               .postal-wrap
-                .postal-frame
-                  = @user.postal_code[0]
-                .postal-frame
-                  = @user.postal_code[1]
-                .postal-frame
-                  = @user.postal_code[2]
+                .postal-frame#lp-postal-code0
+                .postal-frame#lp-postal-code1
+                .postal-frame#lp-postal-code2
               .lp-bar
                 | -
               .postal-wrap
-                .postal-frame
-                  = @user.postal_code[3]
-                .postal-frame
-                  = @user.postal_code[4]
-                .postal-frame
-                  = @user.postal_code[5]
-                .postal-frame
-                  = @user.postal_code[6]
+                .postal-frame#lp-postal-code3
+                .postal-frame#lp-postal-code4
+                .postal-frame#lp-postal-code5
+                .postal-frame#lp-postal-code6
           .lp-text.lp-text-address
         .lp-row
-          .lp-text.lp-text-address
-            | 東京都港区南麻布4-5-48　4階　株式会社HAPPY ARCH
+          .lp-text.lp-text-address#lp-address
+            |
         .lp-row
           .lp-title
             div
@@ -43,8 +36,8 @@ div.bill-container#letter-pack
                 | Name
           .lp-mr
             | 様
-          .lp-text.lp-text-name
-            | 小島 あり彩
+          .lp-text.lp-text-name#lp-name
+            |
         .lp-phone
           .lp-title
             div
@@ -52,7 +45,8 @@ div.bill-container#letter-pack
                 | 電話番号
               .lp-title-us
                 | Telephone Number
-          .lp-text.lp-text-num
+          .lp-text.lp-text-num#lp-tel
+            |
       section.lp-sec.lp-from
         .lp-row.lp-adress
           .lp-title
