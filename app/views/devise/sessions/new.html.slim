@@ -1,0 +1,21 @@
+.ui.middle.aligned.center.aligned.grid
+  .column
+    h2.ui.teal.image.header
+      = image_tag "pear_logo_big", class: "image"
+      .content
+        | Log-in to your account
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui large form'}) do |f|
+      .ui.stacked.segment
+        .field
+          .ui.left.icon.input
+            i.user.icon
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+        .field
+          .ui.left.icon.input
+            i.lock.icon
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+        = f.submit "Log in", class: "ui fluid large teal submit button"
+      .ui.error.message
+    .ui.message
+      | 初めての方はこちら
+      = render "devise/shared/links"

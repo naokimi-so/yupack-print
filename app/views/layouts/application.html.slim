@@ -9,16 +9,23 @@ html
     = stylesheet_link_tag "#{controller_name}"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    p.notice = notice
-    p.alert = alert
-    header.top-header
-      nav
+    / p.notice = notice
+    / p.alert = alert
+    .ui.large.top.fixed.hidden.menu
+      .ui.container
         - if user_signed_in?
-          strong = link_to "ゆうパックラベルプリント", root_path
-          = link_to 'プロフィール変更', edit_user_registration_path
-          = link_to '管理画面に戻る', prints_path
-          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+          strong
+            = link_to "ゆうパックラベルプリント", root_path, class: "active item"
+          = link_to 'プロフィール変更', edit_user_registration_path, class: "item"
+          .right.menu
+            = link_to '管理画面に戻る', prints_path, class: "item"
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "item"
         - else
-          = link_to 'サインアップ', new_user_registration_path
-          = link_to 'ログイン', new_user_session_path
+          .right.menu
+            = link_to 'サインアップ', new_user_registration_path, class: "item"
+            = link_to 'ログイン', new_user_session_path, class: "item"
+    .ui.vertical.inverted.sidebar.menu
+      - if user_signed_in?
+        = link_to "ゆうパックラベルプリント", root_path, class: "active item"
+        = link_to 'プロフィール変更', edit_user_registration_path, class: "item"
     = yield

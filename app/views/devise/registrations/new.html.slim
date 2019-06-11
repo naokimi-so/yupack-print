@@ -1,0 +1,38 @@
+.ui.middle.aligned.center.aligned.grid
+  .column
+    h2.ui.teal.image.header
+      = image_tag "pear_logo_big", class: "image"
+    .content
+      | 新規登録
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui large form'}) do |f|
+      = devise_error_messages!
+      .ui.stacked.segment
+        .field
+          .ui.left.icon.input
+            i.user.icon
+            = f.text_field :name, autofocus: true, autocomplete: "氏名", placeholder: "氏名（フルネーム）"
+        .field
+          .ui.left.icon.input
+            i.mail.icon
+            = f.email_field :email, autofocus: true, autocomplete: "メールアドレス", placeholder: "メールアドレス"
+        .field
+          .ui.left.icon.input
+            i.home.icon
+            = f.text_field :address, autofocus: true, autocomplete: "住所", placeholder: "住所（正確に入力してください）"
+        .field
+          .ui.left.icon.input
+            i.envelope.icon
+            = f.text_field :postal_code, autofocus: true, autocomplete: "郵便番号", placeholder: "郵便番号"
+        .field
+          .ui.left.icon.input
+            i.phone.icon
+            = f.text_field :tel, autofocus: true, autocomplete: "電話番号", placeholder: "電話番号"
+        .field
+          .ui.left.icon.input
+            i.lock.icon
+            = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード"
+        = f.submit "登録する", class: "ui fluid large teal submit button"
+      .ui.error.message
+    .ui.message
+      | すでにアカウントをお持ちの方はこちら
+      = render "devise/shared/links"
